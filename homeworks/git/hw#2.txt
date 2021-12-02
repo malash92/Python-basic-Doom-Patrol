@@ -1,0 +1,120 @@
+1. mkdir cursor_git_hw
+2. cd cursor_git_hw
+3. touch first.txt
+4. git init
+   git add first.txt
+5. git commit -m "adding first.txt"
+6. git log
+   commit fd9aa6b51861bfd925d10b8674cb4f2b1c57b7ca (HEAD -> master)
+   Author: Yuriy Malashnyak <malash92@gmail.com>
+   Date:   Sun Nov 28 13:54:36 2021 +0200
+7. touch second.txt
+8. git add second.txt
+9. git commit -m 'adding second.txt'
+10. rm first.txt
+11. git rm first.txt
+12. git commit -m "removing first.txt"
+13. commit 4a20ae3a80e1343301e006c744ef6d48c46b7605 (HEAD -> master)
+Author: Yuriy Malashnyak <malash92@gmail.com>
+Date:   Sun Nov 28 14:10:34 2021 +0200
+
+    removing first.txt
+
+commit 19ade55c34d812ac4389a064340a425a3218096c
+Author: Yuriy Malashnyak <malash92@gmail.com>
+Date:   Sun Nov 28 14:06:04 2021 +0200
+
+    adding second.txt
+
+commit fd9aa6b51861bfd925d10b8674cb4f2b1c57b7ca
+Author: Yuriy Malashnyak <malash92@gmail.com>
+Date:   Sun Nov 28 13:54:36 2021 +0200
+
+    adding first.txt
+14. git push
+15. git branch first
+16. git checkout -b second
+17. echo 'Hello' > second.txt
+    cat second.txt
+    Hello
+18. git stash
+    git checkout first
+19. git checkout second
+    git stash pop
+20. git add second.txt
+21. git commit -m "Changing second.txt"
+    $ git commit -m "Changing second.txt"
+    [second 1446fc3] Changing second.txt
+    1 file changed, 1 insertion(+)
+22. git push --set-upstream origin second
+    Enumerating objects: 10, done.
+    Counting objects: 100% (10/10), done.
+    Delta compression using up to 2 threads
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (10/10), 888 bytes | 222.00 KiB/s, done.
+    Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+    To github.com:malash92/1.git
+    * [new branch]      second -> second
+    Branch 'second' set up to track remote branch 'second' from 'origin'.
+23. git checkout first
+    Switched to branch 'first'
+24. echo 'Cursor' > second.txt
+    cat second.txt
+    Cursor
+25. git add second.txt
+26. git commit -m "Changing second.txt"
+27. git push --set-upstream origin first
+    Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+    remote:
+    remote: Create a pull request for 'first' on GitHub by visiting:
+    remote:      https://github.com/malash92/1/pull/new/first
+    remote:
+    To github.com:malash92/1.git
+    * [new branch]      first -> first
+    Branch 'first' set up to track remote branch 'first' from 'origin'.
+28. git checkout master
+    Already on 'master'
+    M       second.txt
+29. git merge second
+30. git merge first  
+#conflict.
+31. echo 'Hello Cursor' > second.txt
+    cat second.txt
+    Hello Cursor
+
+    git add second.txt
+    git commit -m "Resolve conflict"
+    git push
+    
+
+1. Create a folder called cursor_git_hw
+2. cd into the cursor_git_hw folder.
+3. Create a file called first.txt.
+4. Add first.txt to the staging area.
+5. Commit with the message "adding first.txt".
+6. Check out your commit with git log.
+7. Create another file called second.txt.
+8. Add second.txt to the staging area.
+9. Commit with the message "adding second.txt"
+10. Remove the first.txt file
+11. Add this change to the staging area
+12. Commit with the message "removing first.txt"
+13. Check out your commits using git log
+14. Push your changes to remote
+15. Create new branch from master called `first` (without checkouting)
+16. Create one more branch from master called `second` (with checkouting to it)
+17. Change the second.txt file with "Hello" string.
+18. Stash you changes and checkout to first branch.
+19. Checkout back and Stash Pop the changes.
+20. Add your changes to the staging area
+21. Commit with the message "Changing second.txt".
+22. Push your changes to remote
+23. Checkout to first branch.
+24. Change the second.txt file with "Cursor" string.
+25. Add your changes to the staging area
+26. Commit with the message "Changing second.txt".
+27. Push your changes to remote
+28. Checkout to master branch
+29*. Merge the changes from second branch
+30*. Then merge the changes from first branch
+31*. Resolve conflict and push the changes to remote
