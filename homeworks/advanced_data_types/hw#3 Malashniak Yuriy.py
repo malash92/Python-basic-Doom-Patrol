@@ -1,4 +1,5 @@
 #1. Define the id of next variables:
+from functools import reduce
 int_a = 55
 str_b = 'cursor'
 set_c = {1, 2, 3}
@@ -132,7 +133,6 @@ list_B = [5, 6, 7]
 list_C = list(map(pow, list_A, list_B))
 print (list_C)
 #24. Use reduce and lambda to compute the numbers of a lst_to_sort.
-from functools import reduce
 spsk = reduce(lambda x,y: x * y, lst_to_sort)
 print (spsk) #764478000
 # 25.  Use filter and lambda to filter the number of a lst_to_sort with elem % 2 == 1.
